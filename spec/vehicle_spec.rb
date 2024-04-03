@@ -31,16 +31,17 @@ RSpec.describe Vehicle do
   it 'is not speeding' do
     vehicle = Vehicle.new("2001", "Honda", "Civic")
     expect(vehicle.speeding?).to be false
+  end
 
   it 'is speeding' do
     vehicle = Vehicle.new("2001", "Honda", "Civic")
-    vehile.speed
+    vehicle.speed
     expect(vehicle.speeding?).to be true
   end
 
   it 'has no passengers' do
     vehicle = Vehicle.new("2001", "Honda", "Civic")
-    expect(vehicle.passengers).to eq[]
+    expect(vehicle.passengers).to eq([])
   end
 
   it 'can add passengers' do
@@ -51,7 +52,7 @@ RSpec.describe Vehicle do
     vehicle.add_passenger(charlie)
     vehicle.add_passenger(jude)
     vehicle.add_passenger(taylor)
-    expect(vehicle.passengers).to eq[charlie, jude, taylor]
+    expect(vehicle.passengers).to eq([charlie, jude, taylor])
   end
 
   it 'can count adult passengers' do
@@ -62,7 +63,7 @@ RSpec.describe Vehicle do
     vehicle.add_passenger(charlie)
     vehicle.add_passenger(jude)
     vehicle.add_passenger(taylor)
-    expect(vehicle.passengers).to eq[charlie, jude, taylor]
+    expect(vehicle.passengers).to eq([charlie, jude, taylor])
     expect(vehicle.num_adults).to eq(2)
   end
 
